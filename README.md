@@ -1,79 +1,126 @@
 # Public Sentiment Trend and WordCloud Analysis on Pertamina Before and After the Viral Pertamax Adulteration Issue Using CNN–LSTM
 
-This project analyzes public sentiment toward Pertamina on social media platform X (formerly Twitter) before and after the viral Pertamax fuel adulteration issue in February 2025. By combining sentiment analysis techniques with deep learning models, the study uncovers how public trust shifted during the crisis.
+This project analyzes public sentiment toward Pertamina on X (formerly Twitter) before and after the viral Pertamax adulteration issue in February 2025. Using InSet Lexicon and deep learning models (CNN, LSTM, and CNN–LSTM), it uncovers how public narratives shifted and how trust was impacted during the crisis.
 
-## 📊 Project Overview
+---
 
-Pertamina plays a critical role in Indonesia’s national energy security, making public perception essential. The Pertamax adulteration issue sparked widespread public reaction online.
-This project measures sentiment trends, identifies dominant narratives, and evaluates CNN, LSTM, and CNN–LSTM models for sentiment classification.
+## 📁 Project Files
 
-**Key findings:**
+This repository contains all the data and supporting files needed to reproduce the analysis:
 
-* Negative sentiment rose from **23.5%** to **48.2%**.
-* Positive sentiment fell from **44.6%** to **26.2%**.
-* CNN achieved the best classification performance compared to LSTM and CNN–LSTM.
-* WordCloud analysis highlighted post-issue keywords such as *“price”*, *“corruption”*, and *“people”*.
+* `pertamina_before.csv` — Tweet dataset collected **before** the Pertamax issue
+* `pertamina_after.csv` — Tweet dataset collected **after** the Pertamax issue
+* `positive.tsv` — Positive lexicon words for sentiment classification
+* `negative.tsv` — Negative lexicon words for sentiment classification
+* `Sentiment_Analysis_Porto.ipynb` — Jupyter notebook containing the full analysis pipeline
+* `requirements.txt` — Python dependencies for running the project
+
+---
+
+## 🧠 Project Overview
+
+In February 2025, the Pertamax adulteration issue went viral, triggering a massive wave of online discussions.
+This project:
+
+* Measures sentiment trends before and after the issue.
+* Identifies dominant keywords and narrative shifts.
+* Evaluates the performance of multiple deep learning models in sentiment classification.
+* Demonstrates how online sentiment can reflect and amplify public trust dynamics.
+
+---
 
 ## 🧰 Technologies Used
 
-* **Language:** Python
-* **Libraries:** Pandas, NumPy, Matplotlib, Seaborn, TensorFlow/Keras, Scikit-learn, Sastrawi
-* **Deep Learning Models:** CNN, LSTM, CNN–LSTM
-* **NLP Techniques:**
+* **Programming Language:** Python
+* **Libraries & Frameworks:**
+  Pandas, NumPy, Matplotlib, Seaborn, WordCloud, NLTK, Sastrawi, Scikit-learn, TensorFlow, Keras
+* **Tools:** Jupyter Notebook
+* **Approach:** NLP (Natural Language Processing) + Deep Learning
 
-  * Text preprocessing (tokenization, stopword removal, stemming)
-  * InSet Lexicon for sentiment scoring
-  * WordCloud visualization
-  * TF-IDF and Word Embeddings
+---
 
-## 🧠 Methodology
+## 🧪 Methodology
 
 1. **Data Collection:**
-   Web scraping of tweets containing the keyword “Pertamina” from two periods: before and after the viral issue.
+   Tweets containing the keyword “Pertamina” were collected in two time periods: before and after the viral Pertamax issue.
 
 2. **Text Preprocessing:**
-   Cleaning, normalization, tokenization, stopword removal, stemming.
+   Cleaning text, normalizing case and slang, tokenization, stopword removal, stemming using Sastrawi.
 
-3. **Sentiment Classification:**
-   Using InSet Lexicon to label tweets as Positive, Negative, or Neutral.
+3. **Sentiment Labeling:**
+   Tweets were labeled Positive, Negative, or Neutral using the InSet Lexicon sentiment scoring.
 
-4. **Visualization:**
-   Exploratory data analysis with bar charts, pie charts, word frequency plots, and WordClouds.
+4. **Exploratory Analysis:**
+   Sentiment distribution was visualized with bar charts, pie charts, and word frequency plots.
 
-5. **Model Training:**
-   Comparison of CNN, LSTM, and CNN–LSTM architectures using accuracy, precision, recall, and F1-score.
+5. **WordCloud Analysis:**
+   Visualized narrative changes and keyword shifts.
 
-## 📈 Results
+6. **Model Training:**
+   Deep learning models (CNN, LSTM, CNN–LSTM) were trained on the labeled data to classify sentiment polarity.
 
-* CNN performed best overall, although overfitting was observed.
-* LSTM and CNN–LSTM struggled to generalize well on short text data.
-* Public discourse shifted from institutional themes to criticism about price and trust issues.
+7. **Model Evaluation:**
+   Models were evaluated based on accuracy, precision, recall, and F1-score.
+
+---
+
+## 🧠 Key Findings
+
+* Negative sentiment toward Pertamina **increased from 23.5% to 48.2%** after the issue.
+* Positive sentiment **dropped from 44.6% to 26.2%**, showing a clear decline in public trust.
+* **CNN achieved the best accuracy** among the tested models but experienced overfitting.
+* WordCloud analysis revealed new dominant terms such as *“price”*, *“corruption”*, and *“people”*.
+* Public narratives shifted from neutral or supportive discussions to criticism and distrust.
+
+---
+
+## 📈 Results Summary
+
+| Model    | Accuracy | Notes                                                     |
+| -------- | -------- | --------------------------------------------------------- |
+| CNN      | Highest  | Strong performance but signs of overfitting               |
+| LSTM     | Lower    | Struggled with short text context                         |
+| CNN–LSTM | Moderate | Improved feature learning but not optimal on this dataset |
+
+WordCloud visualizations reinforced the sentiment results, highlighting critical narrative shifts post-issue.
+
+---
 
 ## 🚀 How to Run
 
-1. Clone the repository:
+1. **Clone the repository**
 
    ```bash
    git clone https://github.com/your-username/pertamina-sentiment-analysis.git
    cd pertamina-sentiment-analysis
    ```
 
-2. Install dependencies:
+2. **Install dependencies**
 
    ```bash
    pip install -r requirements.txt
    ```
 
-3. Run the Jupyter notebook:
+3. **Open the notebook**
 
    ```bash
    jupyter notebook Sentiment_Analysis_Porto.ipynb
    ```
 
-4. Follow the notebook cells step by step to preprocess data, train models, and visualize results.
+4. **Run the cells** step by step to:
 
-## 🧭 Future Improvements
+   * Preprocess and label data
+   * Visualize sentiment distribution and word frequencies
+   * Train and evaluate models
+   * Generate WordCloud visualizations
 
-* Use transformer-based architectures such as BERT or IndoBERT for better context understanding.
-* Balance class distribution to improve model generalization.
-* Expand dataset to multiple platforms for richer analysis.
+---
+
+## 🧭 Future Work
+
+* Integrate transformer-based models (e.g., BERT / IndoBERT) to better capture linguistic context.
+* Balance class distribution to reduce overfitting and improve generalization.
+* Expand data sources beyond X (Twitter) for richer, multi-platform analysis.
+* Automate real-time sentiment monitoring for crisis communication strategies.
+
+---
