@@ -1,4 +1,4 @@
-# Public Sentiment Trend and WordCloud Analysis on Pertamina Before and After the Viral Pertamax Adulteration Issue Using CNN–LSTM
+# Public Sentiment Trend and WordCloud Analysis on Pertamina Before and After the Viral Pertamax Adulteration Issue Using Deeplearning
 
 This project analyzes public sentiment toward Pertamina on X (formerly Twitter) before and after the viral Pertamax adulteration issue in February 2025. Using InSet Lexicon and deep learning models (CNN, LSTM, and CNN–LSTM), it uncovers how public narratives shifted and how trust was impacted during the crisis.
 
